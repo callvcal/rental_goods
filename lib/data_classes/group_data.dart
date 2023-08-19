@@ -3,5 +3,9 @@ class GroupData {
   String description;
   List<String> participants;
 
-  GroupData({required this.groupName,required this.description,required this.participants});
+  GroupData({
+    required this.groupName,
+    required this.description,
+    required this.participants
+  });
 }

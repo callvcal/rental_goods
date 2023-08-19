@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:group_task/button_widgets/button1.dart';
 import 'package:group_task/custom_cards/product_card.dart';
-import 'package:group_task/screens/prerit_your_products.dart';
+import 'package:group_task/screens/your_products.dart';
 import '../data_classes/product_data.dart';
 
 class ProductDashboard extends StatefulWidget {
@@ -17,6 +19,8 @@ class _ProductDashboardState extends State<ProductDashboard> {
     ProductData(name: 'Product 2', previousPrice: 60, newPrice: 50, stock: 2, type: 'Old', image: 'assets/images/image2.png', availability: 'Not Available'),
     ProductData(name: 'Product 3', previousPrice: 70, newPrice: 60, stock: 3, type: 'New', image: 'assets/images/image3.png', availability: 'Available'),
     ProductData(name: 'Product 4', previousPrice: 80, newPrice: 70, stock: 4, type: 'Old', image: 'assets/images/image3.png', availability: 'Not Available'),
+    ProductData(name: 'Product 5', previousPrice: 80, newPrice: 70, stock: 4, type: 'Old', image: 'assets/images/image3.png', availability: 'Not Available'),
+    ProductData(name: 'Product 6', previousPrice: 80, newPrice: 70, stock: 4, type: 'Old', image: 'assets/images/image3.png', availability: 'Not Available'),
   ];
 
   @override
@@ -33,45 +37,27 @@ class _ProductDashboardState extends State<ProductDashboard> {
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 14,vertical: 10),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18)
-                ),
-                backgroundColor: const Color(0xffd9d9d9),
-              ),
+            child: Button1(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const OwnProductsPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> const OwnProductsPage()));
               },
-              child: const Text(
-                'Sell',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20
-                ),
-              )
-            ),
+              text: 'Sell',
+            )
           )
         ],
       ),
-      body: GridView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 1,
-          crossAxisSpacing: 7,
-          mainAxisSpacing: 7,
-          childAspectRatio: 1,
-        ),
+      body: StaggeredGridView.countBuilder(
+        crossAxisCount: 2,
         itemCount: data.length,
-        itemBuilder: (context,index) {
-          return InkWell(
-            onTap: () {
-              debugPrint((index+1).toString());
-            },
-            child: ProductCard(productData: data[index])
+        itemBuilder: (BuildContext context, int index) {
+          return ProductCard(
+            productData: data[index],
+            isProductCardCalled: false,
           );
         },
+        staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
+        mainAxisSpacing: 4.0,
+        crossAxisSpacing: 8.0,
       ),
     );
   }
