@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:group_task/data_classes/product_data.dart';
 import 'package:group_task/screens/your_products.dart';
 import '../button_widgets/button2.dart';
 import '../inputfield_widgets/inputfield1.dart';
 
 class EditProduct extends StatefulWidget {
-  const EditProduct({super.key});
+  const EditProduct({super.key,required this.productData});
+  final ProductData productData;
 
   @override
   State<EditProduct> createState() => _EditProductState();
@@ -46,7 +48,7 @@ class _EditProductState extends State<EditProduct> {
                   height: 200,
                   width: 200,
                   child: Image.asset(
-                    'assets/images/image1.png',
+                    widget.productData.image,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -55,17 +57,35 @@ class _EditProductState extends State<EditProduct> {
                     key: formKey,
                     child: Column(
                       children: [
-                        InputField1(controller: nameController, fieldName: 'Write the name of product',),
+                        InputField1(
+                          controller: nameController,
+                          fieldName: 'Write the name of product'
+                        ),
                         const SizedBox(height: 7),
-                        InputField1(controller: descriptionController, fieldName: 'Write the description of product',),
+                        InputField1(
+                          controller: descriptionController,
+                          fieldName: 'Write the description of product',
+                          ),
                         const SizedBox(height: 7),
-                        InputField1(controller: priceController, fieldName: 'Price of product',),
+                        InputField1(
+                          controller: priceController,
+                          fieldName: 'Price of product',
+                        ),
                         const SizedBox(height: 7),
-                        InputField1(controller: sellingPriceController, fieldName: 'Selling Price'),
+                        InputField1(
+                          controller: sellingPriceController,
+                          fieldName: 'Selling Price',
+                          ),
                         const SizedBox(height: 7),
-                        InputField1(controller: stockController, fieldName: 'Stock',),
+                        InputField1(
+                          controller: stockController,
+                          fieldName: 'Stock',
+                          ),
                         const SizedBox(height: 7),
-                        InputField1(controller: typeController, fieldName: 'Types of Product',),
+                        InputField1(
+                          controller: typeController,
+                          fieldName: 'Types of Product',
+                          ),
                         const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -15,12 +15,12 @@ class ProductDashboard extends StatefulWidget {
 class _ProductDashboardState extends State<ProductDashboard> {
 
   List<ProductData> data = [
-    ProductData(name: 'Product 1', previousPrice: 50, newPrice: 40, stock: 1, type: 'New', image: 'assets/images/image1.png', availability: 'Available'),
-    ProductData(name: 'Product 2', previousPrice: 60, newPrice: 50, stock: 2, type: 'Old', image: 'assets/images/image2.png', availability: 'Not Available'),
-    ProductData(name: 'Product 3', previousPrice: 70, newPrice: 60, stock: 3, type: 'New', image: 'assets/images/image3.png', availability: 'Available'),
-    ProductData(name: 'Product 4', previousPrice: 80, newPrice: 70, stock: 4, type: 'Old', image: 'assets/images/image3.png', availability: 'Not Available'),
-    ProductData(name: 'Product 5', previousPrice: 80, newPrice: 70, stock: 4, type: 'Old', image: 'assets/images/image3.png', availability: 'Not Available'),
-    ProductData(name: 'Product 6', previousPrice: 80, newPrice: 70, stock: 4, type: 'Old', image: 'assets/images/image3.png', availability: 'Not Available'),
+    ProductData(name: 'Product 1', previousPrice: 50, newPrice: 40, stock: 1, type: 'New', image: 'assets/images/image1.png', availability: 'Available', description: ''),
+    ProductData(name: 'Product 2', previousPrice: 60, newPrice: 50, stock: 2, type: 'Old', image: 'assets/images/image2.png', availability: 'Not Available', description: ''),
+    ProductData(name: 'Product 3', previousPrice: 70, newPrice: 60, stock: 3, type: 'New', image: 'assets/images/image3.png', availability: 'Available', description: ''),
+    ProductData(name: 'Product 4', previousPrice: 80, newPrice: 70, stock: 4, type: 'Old', image: 'assets/images/image3.png', availability: 'Not Available', description: ''),
+    ProductData(name: 'Product 5', previousPrice: 80, newPrice: 70, stock: 4, type: 'Old', image: 'assets/images/image3.png', availability: 'Not Available', description: ''),
+    ProductData(name: 'Product 6', previousPrice: 80, newPrice: 70, stock: 4, type: 'Old', image: 'assets/images/image3.png', availability: 'Not Available', description: ''),
   ];
 
   @override

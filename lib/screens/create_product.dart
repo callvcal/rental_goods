@@ -56,19 +56,40 @@ class _CreateProductState extends State<CreateProduct> {
                   key: formKey,
                   child: Column(
                     children: [
-                      InputField1(controller: nameController, fieldName: 'Write the name of product',),
+                      InputField1(
+                        controller: nameController,
+                        fieldName: 'Write the name of product',
+                      ),
                       const SizedBox(height: 7),
-                      InputField1(controller: descriptionController, fieldName: 'Write the description of product',),
+                      InputField1(
+                        controller: descriptionController,
+                        fieldName: 'Write the description of product',
+                      ),
                       const SizedBox(height: 7),
-                      InputField1(controller: priceController, fieldName: 'Price of product',),
+                      InputField1(
+                        controller: priceController,
+                        fieldName: 'Price of product',
+                      ),
                       const SizedBox(height: 7),
-                      InputField1(controller: sellingPriceController, fieldName: 'Selling Price'),
+                      InputField1(
+                        controller: sellingPriceController,
+                        fieldName: 'Selling Price',
+                      ),
                       const SizedBox(height: 7),
-                      InputField1(controller: stockController, fieldName: 'Stock',),
+                      InputField1(
+                        controller: stockController,
+                        fieldName: 'Stock',
+                      ),
                       const SizedBox(height: 7),
-                      InputField1(controller: typeController, fieldName: 'Types of Product',),
+                      InputField1(
+                        controller: typeController,
+                        fieldName: 'Types of Product',
+                      ),
                       const SizedBox(height: 7),
-                      InputField1(controller: categoryController, fieldName: 'Types of Categories',),
+                      InputField1(
+                        controller: categoryController,
+                        fieldName: 'Types of Categories',
+                      ),
                       const SizedBox(height: 20),
                       Button2(
                         text: 'Save Product',

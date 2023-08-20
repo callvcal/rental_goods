@@ -1,5 +1,6 @@
 class ProductData {
   String name;
+  String description;
   String image;
   double previousPrice;
   double newPrice;
@@ -9,6 +10,7 @@ class ProductData {
 
   ProductData({
     required this.name,
+    required this.description,
     required this.image,
     required this.previousPrice,
     required this.newPrice,

@@ -46,14 +46,15 @@ class _ProductCardState extends State<ProductCard> {
                   ),
                 ),
               ),
-              const SizedBox(height: 2),
+              const SizedBox(height: 3),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: RichText(
                   text: TextSpan(
                     text: 'Price: ₹',
                     style: const TextStyle(
-                      color: Colors.black
+                      color: Colors.black,
+                        fontSize: 18
                     ),
                     children: [
                       TextSpan(
@@ -73,7 +74,7 @@ class _ProductCardState extends State<ProductCard> {
                   ),
                 ),
               ),
-              const SizedBox(height: 2),
+              const SizedBox(height: 3),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: Text(
@@ -83,7 +84,7 @@ class _ProductCardState extends State<ProductCard> {
                   ),
                 ),
               ),
-              const SizedBox(height: 2),
+              const SizedBox(height: 5),
               widget.isProductCardCalled
                   ? Container()
                   : Padding(
@@ -99,14 +100,8 @@ class _ProductCardState extends State<ProductCard> {
                   ? Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
-                          'In Review:',
-                          style: TextStyle(
-                              fontSize: 18
-                          ),
-                        ),
                         Text(
                           widget.productData.availability,
                           style: TextStyle(
