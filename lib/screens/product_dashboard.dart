@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:group_task/button_widgets/button1.dart';
 import 'package:group_task/custom_cards/product_card.dart';
+import 'package:group_task/screens/product_details.dart';
 import 'package:group_task/screens/your_products.dart';
 import '../data_classes/product_data.dart';
 
@@ -50,9 +51,14 @@ class _ProductDashboardState extends State<ProductDashboard> {
         crossAxisCount: 2,
         itemCount: data.length,
         itemBuilder: (BuildContext context, int index) {
-          return ProductCard(
-            productData: data[index],
-            isProductCardCalled: false,
+          return InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetails(productData: data[index])));
+            },
+            child: ProductCard(
+              productData: data[index],
+              isProductCardCalled: false,
+            ),
           );
         },
         staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
